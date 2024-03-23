@@ -29,10 +29,10 @@ to provide them insights from their historical data.
 **2. Data Transformation:**
 
    Used first row as header
-   Generated a new column in dim_date table called "week number" to determine week numbers from dates
+   Generated a new column in dim_date table called "week number" to determine week numbers from dates<br>
          - Dax formula: week_number = WEEKNUM(dim_date[date])
 
-  Changed "day_type" column values -> considering Saturday or Sunday as Weekend
+  Changed "day_type" column values -> considering Saturday or Sunday as Weekend<br>
          - Dax formula: day_type = IF(WEEKDAY(dim_date[Date], 2) >= 6, "Weekend", "Weekday")
 
 **3. Managed Relationships:**
