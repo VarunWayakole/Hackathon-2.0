@@ -65,5 +65,6 @@ to provide them insights from their historical data.
 
 **5. Create Dashboard:**
 
-   ![Report](https://github.com/VarunWayakole/Hackathon-2.0/assets/91410941/676eba82-0e2a-44d0-a118-d3e47d6f8f70)
+   ![Report](https://github.com/VarunWayakole/Hackathon-2.0/assets/91410941/055b676b-6426-44ad-b193-a188db6fa1bb)
+
    
