@@ -35,6 +35,6 @@ to provide them insights from their historical data.
   Changed "day_type" column values -> considering Saturday or Sunday as Weekend<br>
          - Dax formula: day_type = IF(WEEKDAY(dim_date[Date], 2) >= 6, "Weekend", "Weekday")
 
-**3. Managed Relationships:**
+**3. Managed Relationships:**<br>
   Created star schema relationship between tables
 ![StarSchema](https://github.com/VarunWayakole/Hackathon-2.0/assets/91410941/f31e1950-b33d-4c4a-b68a-7810ffdd9f9b)
