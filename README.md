@@ -28,38 +28,42 @@ to provide them insights from their historical data.
 
 **2. Data Transformation:**
 
-   Used first row as header
-   Generated a new column in dim_date table called "week number" to determine week numbers from dates<br>
+   Generate a new column in dim_date table called "week number" to determine week numbers from dates<br>
          - Dax formula: week_number = WEEKNUM(dim_date[date])
 
-  Changed "day_type" column values -> considering Saturday or Sunday as Weekend<br>
+   Change "day_type" column values -> considering Saturday or Sunday as Weekend<br>
          - Dax formula: day_type = IF(WEEKDAY(dim_date[Date], 2) >= 6, "Weekend", "Weekday")
 
-**3. Managed Relationships:**
+**3. Manage Relationships:**
 
-  Created star schema relationship between tables
-![StarSchema](https://github.com/VarunWayakole/Hackathon-2.0/assets/91410941/f31e1950-b33d-4c4a-b68a-7810ffdd9f9b)
+   Create a star schema relationship between tables
+   ![StarSchema](https://github.com/VarunWayakole/Hackathon-2.0/assets/91410941/f31e1950-b33d-4c4a-b68a-7810ffdd9f9b)
 
-**4. Created measures:**
+**4. Create measures:**
 
-Revenue - SUM(fact_bookings[revenue_realized])<br>
-Total Bookings - COUNT(fact_bookings[booking_id])<br>
-Average Rating - AVERAGE(fact_bookings[ratings_given])<br>
-Total Capacity - SUM(fact_aggregated_bookings[capacity])<br>
-Total Succesful bookings - SUM(fact_aggregated_bookings[successful_bookings])<br>
-Occupancy % - DIVIDE([Total Succesful bookings], [Total Capacity], 0)<br>
-Total Cancelled Bookings - CALCULATE([Total Bookings], fact_bookings[booking_status] = "Cancelled")<br>
-Cancellation Rate - DIVIDE([Total cancelled bookings], [Total Bookings], 0)<br>
+   Revenue - SUM(fact_bookings[revenue_realized])<br>
+   Total Bookings - COUNT(fact_bookings[booking_id])<br>
+   Average Rating - AVERAGE(fact_bookings[ratings_given])<br>
+   Total Capacity - SUM(fact_aggregated_bookings[capacity])<br>
+   Total Succesful bookings - SUM(fact_aggregated_bookings[successful_bookings])<br>
+   Occupancy % - DIVIDE([Total Succesful bookings], [Total Capacity], 0)<br>
+   Total Cancelled Bookings - CALCULATE([Total Bookings], fact_bookings[booking_status] = "Cancelled")<br>
+   Cancellation Rate - DIVIDE([Total cancelled bookings], [Total Bookings], 0)<br>
+   
+   Other Key Measures:<br>
+   Average Daily Rate - DIVIDE([Revenue], [Total Bookings], 0)<br>
+   Booking % by Platform - DIVIDE([Total Bookings], CALCULATE([Total Bookings], ALL(fact_bookings[booking_platform]))) * 100<br>
+   No of Days - DATEDIFF(MIN(dim_date[date]), MAX(dim_date[date]), DAY) + 1<br>
+   Daily Booked Room (DBR) - DIVIDE([Total Bookings], [No of Days], 0)<br>
+   Revenue Per Available Room - DIVIDE([Revenue], [Total Capacity], 0)<br>
+   Daily Sellable Rooms - DIVIDE([Total Capacity], [No of Days], 0)<br>
+   Daily Utilized Rooms - DIVIDE([Total Checked Out], [No of Days], 0)<br>
+   Total No Show Bookings - CALCULATE([Total Bookings], fact_bookings[booking_status] = "No Show")<br>
+   No Show Rate % - DIVIDE([Total No Show Bookings], [Total Bookings], 0)<br>
+   Total Checked Out - CALCULATE([Total Bookings], fact_bookings[booking_status] = "Checked Out")<br>
+   Total Cancelled Bookings - CALCULATE([Total Bookings], fact_bookings[booking_status] = "Cancelled")<br>
 
-Other Key Measures:<br>
-Average Daily Rate - DIVIDE([Revenue], [Total Bookings], 0)<br>
-Booking % by Platform - DIVIDE([Total Bookings], CALCULATE([Total Bookings], ALL(fact_bookings[booking_platform]))) * 100<br>
-No of Days - DATEDIFF(MIN(dim_date[date]), MAX(dim_date[date]), DAY) + 1<br>
-Daily Booked Room (DBR) - DIVIDE([Total Bookings], [No of Days], 0)<br>
-Revenue Per Available Room - DIVIDE([Revenue], [Total Capacity], 0)<br>
-Daily Sellable Rooms - DIVIDE([Total Capacity], [No of Days], 0)<br>
-Daily Utilized Rooms - DIVIDE([Total Checked Out], [No of Days], 0)<br>
-Total No Show Bookings - CALCULATE([Total Bookings], fact_bookings[booking_status] = "No Show")<br>
-No Show Rate % - DIVIDE([Total No Show Bookings], [Total Bookings], 0)<br>
-Total Checked Out - CALCULATE([Total Bookings], fact_bookings[booking_status] = "Checked Out")<br>
-Total Cancelled Bookings - CALCULATE([Total Bookings], fact_bookings[booking_status] = "Cancelled")<br>
+**5. Create Dashboard:**
+
+   ![Report](https://github.com/VarunWayakole/Hackathon-2.0/assets/91410941/676eba82-0e2a-44d0-a118-d3e47d6f8f70)
+   
