@@ -65,6 +65,28 @@ to provide them insights from their historical data.
 
 **5. Create Dashboard:**
 
-   ![Report](https://github.com/VarunWayakole/Hackathon-2.0/assets/91410941/055b676b-6426-44ad-b193-a188db6fa1bb)
+   ![Report](https://github.com/VarunWayakole/Hackathon-2.0/assets/91410941/c57c4101-498b-40ae-961f-b03200df4b91)
 
-   
+
+   KPIs:<br>
+   Revenue<br>
+   Occupancy %<br>
+   Average Rating<br>
+   RevPar (Revenue Per Available Room)<br>
+   ADR (Average Daily Rate)<br>
+   DSR (Daily Sellable Rooms)<br>
+
+   Visuals:<br>
+   Revenue by City - Clustered Bar Chart<br>
+   Occupancy by City<br>
+   Booking % by Platform<br>
+   Occupancy % by Day Type - Donut Chart<br>
+   Matrix (Property Name, Revenue, Average Rating, Occupancy %, Cancellation %, Total Capacity)<br>
+
+   Slicers:<br>
+   Property Name<br>
+   City<br>
+   Booking Status<br>
+   Platform<br>
+   Month<br>
+   Week Number<br>
