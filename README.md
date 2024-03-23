@@ -42,24 +42,24 @@ to provide them insights from their historical data.
 
 **4. Created measures:**
 
-Revenue - SUM(fact_bookings[revenue_realized])
-Total Bookings - COUNT(fact_bookings[booking_id])
-Average Rating - AVERAGE(fact_bookings[ratings_given])
-Total Capacity - SUM(fact_aggregated_bookings[capacity])
-Total Succesful bookings - SUM(fact_aggregated_bookings[successful_bookings])
-Occupancy % - DIVIDE([Total Succesful bookings], [Total Capacity], 0)
-Total Cancelled Bookings - CALCULATE([Total Bookings], fact_bookings[booking_status] = "Cancelled")
-Cancellation Rate - DIVIDE([Total cancelled bookings], [Total Bookings], 0)
+Revenue - SUM(fact_bookings[revenue_realized])<br>
+Total Bookings - COUNT(fact_bookings[booking_id])<br>
+Average Rating - AVERAGE(fact_bookings[ratings_given])<br>
+Total Capacity - SUM(fact_aggregated_bookings[capacity])<br>
+Total Succesful bookings - SUM(fact_aggregated_bookings[successful_bookings])<br>
+Occupancy % - DIVIDE([Total Succesful bookings], [Total Capacity], 0)<br>
+Total Cancelled Bookings - CALCULATE([Total Bookings], fact_bookings[booking_status] = "Cancelled")<br>
+Cancellation Rate - DIVIDE([Total cancelled bookings], [Total Bookings], 0)<br>
 
-Other Key Measures:
-Average Daily Rate - DIVIDE([Revenue], [Total Bookings], 0)
-Booking % by Platform - DIVIDE([Total Bookings], CALCULATE([Total Bookings], ALL(fact_bookings[booking_platform]))) * 100
-No of Days - DATEDIFF(MIN(dim_date[date]), MAX(dim_date[date]), DAY) + 1
-Daily Booked Room (DBR) - DIVIDE([Total Bookings], [No of Days], 0)
-Revenue Per Available Room - DIVIDE([Revenue], [Total Capacity], 0)
-Daily Sellable Rooms - DIVIDE([Total Capacity], [No of Days], 0)
-Daily Utilized Rooms - DIVIDE([Total Checked Out], [No of Days], 0)
-Total No Show Bookings - CALCULATE([Total Bookings], fact_bookings[booking_status] = "No Show")
-No Show Rate % - DIVIDE([Total No Show Bookings], [Total Bookings], 0)
-Total Checked Out - CALCULATE([Total Bookings], fact_bookings[booking_status] = "Checked Out")
-Total Cancelled Bookings - CALCULATE([Total Bookings], fact_bookings[booking_status] = "Cancelled")
+Other Key Measures:<br>
+Average Daily Rate - DIVIDE([Revenue], [Total Bookings], 0)<br>
+Booking % by Platform - DIVIDE([Total Bookings], CALCULATE([Total Bookings], ALL(fact_bookings[booking_platform]))) * 100<br>
+No of Days - DATEDIFF(MIN(dim_date[date]), MAX(dim_date[date]), DAY) + 1<br>
+Daily Booked Room (DBR) - DIVIDE([Total Bookings], [No of Days], 0)<br>
+Revenue Per Available Room - DIVIDE([Revenue], [Total Capacity], 0)<br>
+Daily Sellable Rooms - DIVIDE([Total Capacity], [No of Days], 0)<br>
+Daily Utilized Rooms - DIVIDE([Total Checked Out], [No of Days], 0)<br>
+Total No Show Bookings - CALCULATE([Total Bookings], fact_bookings[booking_status] = "No Show")<br>
+No Show Rate % - DIVIDE([Total No Show Bookings], [Total Bookings], 0)<br>
+Total Checked Out - CALCULATE([Total Bookings], fact_bookings[booking_status] = "Checked Out")<br>
+Total Cancelled Bookings - CALCULATE([Total Bookings], fact_bookings[booking_status] = "Cancelled")<br>
