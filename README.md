@@ -30,12 +30,11 @@ to provide them insights from their historical data.
 
    Used first row as header
    Generated a new column in dim_date table called "week number" to determine week numbers from dates
-     - Dax formula: week_number = WEEKNUM(dim_date[date])
+         - Dax formula: week_number = WEEKNUM(dim_date[date])
 
   Changed "day_type" column values -> considering Saturday or Sunday as Weekend
-     - Dax formula: day_type = IF(WEEKDAY(dim_date[Date], 2) >= 6, "Weekend", "Weekday")
+         - Dax formula: day_type = IF(WEEKDAY(dim_date[Date], 2) >= 6, "Weekend", "Weekday")
 
 **3. Managed Relationships:**
-
   Created star schema relationship between tables
 ![StarSchema](https://github.com/VarunWayakole/Hackathon-2.0/assets/91410941/f31e1950-b33d-4c4a-b68a-7810ffdd9f9b)
