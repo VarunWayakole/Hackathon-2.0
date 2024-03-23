@@ -21,10 +21,13 @@ to provide them insights from their historical data.
 5. fact_bookings
 
 **Steps**:
+
 **1. Load data into Power BI:**
+
    Open Power BI - Get Data - Link Folder which contains csv files - convert binary to tables
 
 **2. Data Transformation:**
+
    Used first row as header
    Generated a new column in dim_date table called "week number" to determine week numbers from dates
      - Dax formula: week_number = WEEKNUM(dim_date[date])
@@ -33,5 +36,6 @@ to provide them insights from their historical data.
      - Dax formula: day_type = IF(WEEKDAY(dim_date[Date], 2) >= 6, "Weekend", "Weekday")
 
 **3. Managed Relationships:**
+
   Created star schema relationship between tables
 ![StarSchema](https://github.com/VarunWayakole/Hackathon-2.0/assets/91410941/f31e1950-b33d-4c4a-b68a-7810ffdd9f9b)
