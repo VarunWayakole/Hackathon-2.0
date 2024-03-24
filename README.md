@@ -78,6 +78,7 @@ to provide them insights from their historical data.
    Visuals:<br>
    Revenue by City - Clustered Bar Chart<br>
    Occupancy by City<br>
+   Weekly Trend by Revenue & Average Rating<br>
    Booking % by Platform<br>
    Occupancy % by Day Type - Donut Chart<br>
    Matrix (Property Name, Revenue, Average Rating, Occupancy %, Cancellation %, Total Capacity)<br>
