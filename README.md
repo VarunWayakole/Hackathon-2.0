@@ -65,7 +65,7 @@ to provide them insights from their historical data.
 
 **5. Create Dashboard:**
 
-   ![Report](https://github.com/VarunWayakole/Hackathon-2.0/assets/91410941/b6e97e22-71c6-4def-b532-22128904e002)
+   ![Report](https://github.com/VarunWayakole/Hackathon-2.0/assets/91410941/648f61b2-a493-4e64-8a48-b6b8e114683d)
 
    KPIs:<br>
    Revenue<br>
