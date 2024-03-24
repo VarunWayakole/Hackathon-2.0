@@ -8,7 +8,7 @@ losing its market share and revenue in the luxury/business hotels category.
 As a strategic move, the managing director of GDS Grands wanted to 
 incorporate “Business and Data Intelligence” in order to regain their market share 
 and revenue. However, they do not have an in-house data analytics team to 
-provide them with these insights.
+provide them with these insights.<br>
 Their revenue management team had decided to hire a 3rd party service provider 
 to provide them insights from their historical data.</p>
 
